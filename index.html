@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="styles/main.css">
     <script defer src="./js/main.js"></script>
     <title>정영교 PORTFOLIO</title>
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon"> 
   <style>
   </style>
 </head>
@@ -27,64 +29,80 @@
             <li class="menu-item">
                 <a href="#contact">CONTACT</a>
             </li>
-            <li class="mode-change"></li>
         </ul>
+        <div class="mode-change light">
+            <div>☼</div>
+            <div>☾</div>
+        </div>
     </nav>
 
     <!-- 전체 페이지 스크롤 영역 -->
     <main class="main-box">
         <section id="greeting" class="home-sectoin sections">
-            <div class="typewriter">
-                프론트엔드개발자정영교포트폴리오
-                <span class="cursor">|</span>
+            <div class="typing-container">
+                <span class="typed-text"></span>
+            </div>
+            <div class="replay-button">
+                <img src="./images/reload.png" alt="reload">
             </div>
         </section>
         <section id="about" class="introduce-section sections">
             <div class="introduce-box">
-                <p>저는 프론트엔드 개발자 정영교입니다.</p>
-                <p>웹 개발에 열정을 가지고 있으며, 사용자 경험을 최우선으로 생각합니다.</p>
+                <img src="/images/daily_profile.png" alt="">
             </div>
         </section>
         <section id="skills" class="skill-section sections">
             <div class="skill-box">
                 <div class="skill-header">
-                    <div class="skill-category">Main</div>
-                    <div class="skill-category">Experienced</div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="toggleCheckbox">
+                        <span class="slider"></span>
+                    </label>
+                    <div class="skill-title">
+                        <div class="skill-category">Main</div>
+                        <div class="skill-category">Experienced</div>
+                    </div>
                 </div>
                 <div class="skill-content">
                     <div class="skill-list">
-                        <div class="skill-item can">
-                            <img src="./images/langImg/1.png" alt="">
+                        <div class="skill-row">
+                            <div class="skill-item can">
+                                <img src="./images/langImg/1.png" alt="">
+                            </div>
+                            <div class="skill-item can">
+                                <img src="./images/langImg/2.png" alt="">
+                            </div>
+                            <div class="skill-item can">
+                                <img src="./images/langImg/3.png" alt="">
+                            </div>
+                            <div class="skill-item can">
+                                <img src="./images/langImg/5.png" alt="">
+                            </div>
                         </div>
-                        <div class="skill-item can">
-                            <img src="./images/langImg/2.png" alt="">
+                        <div class="skill-row">
+                            <div class="skill-item can">
+                                <img src="./images/langImg/8.png" alt="">
+                            </div>
+                            <div class="skill-item can">
+                                <img src="./images/langImg/9.png" alt="">
+                            </div>
+                            <div class="skill-item can">
+                                <img src="./images/langImg/10.png" alt="">
+                            </div>
+                            <div class="skill-item">
+                                <img src="./images/langImg/4.png" alt="">
+                            </div>
                         </div>
-                        <div class="skill-item can">
-                            <img src="./images/langImg/3.png" alt="">
-                        </div>
-                        <div class="skill-item can">
-                            <img src="./images/langImg/5.png" alt="">
-                        </div>
-                        <div class="skill-item can">
-                            <div src="./images/langImg/8.png" alt="">
-                        </div>
-                        <div class="skill-item can">
-                            <img src="./images/langImg/9.png" alt="">
-                        </div>
-                        <div class="skill-item can">
-                            <img src="./images/langImg/10.png" alt="">
-                        </div>
-                        <div class="skill-item">
-                            <img src="./images/langImg/4.png" alt="">
-                        </div>
-                        <div class="skill-item">
-                            <img src="./images/langImg/6.png" alt="">
-                        </div>
-                        <div class="skill-item">
-                            <img src="./images/langImg/7.png" alt="">
-                        </div>
-                        <div class="skill-item">
-                            <img src="./images/langImg/11.png" alt="">
+                        <div class="skill-row">
+                            <div class="skill-item">
+                                <img src="./images/langImg/6.png" alt="">
+                            </div>
+                            <div class="skill-item">
+                                <img src="./images/langImg/7.png" alt="">
+                            </div>
+                            <div class="skill-item">
+                                <img src="./images/langImg/11.png" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -94,11 +112,13 @@
             포트폴리오 프로젝트 목록
         </section>
         <section id="contact" class="contact-section sections">
-            <div class="contact-box">
-                <img src="./images/contact/call.png" alt="">
-            </div>
-            <div class="contact-box">
-                <img src="./images/contact/email.png" alt="">
+            <div class="contact-header">
+                <div class="contact-box">
+                    <img src="./images/contact/call.png" alt="">
+                </div>
+                <div class="contact-box">
+                    <img src="./images/contact/email.png" alt="">
+                </div>
             </div>
         </section>
     </main>
