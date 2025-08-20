@@ -34,6 +34,15 @@ document.addEventListener("DOMContentLoaded", () => {
       history.replaceState(null, null, href);
       location.href = href;
       document.querySelector("body").classList.add("loaded");
+
+      let sections = document.querySelectorAll(".sections");
+        
+      sections.forEach((sec) => {
+        let index = Array.from(link.closest(".menu-list").children).indexOf(link.parentElement);
+        
+        sec.classList.remove("active");
+        sections[index].classList.add("active");
+      });
     }
   });
 
@@ -44,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   let observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         let id = entry.target.getAttribute("id");
 
@@ -54,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (activeLink) {
           activeLink.classList.add("active");
         }
+
       }
     });
   }, observerOptions);
@@ -128,9 +138,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   checkbox.addEventListener('change', () => {
     if (checkbox.checked) {
-      checkbox.closest(".skill-box").classList.add("main");
-    } else {
       checkbox.closest(".skill-box").classList.remove("main");
+    } else {
+      checkbox.closest(".skill-box").classList.add("main");
     }
   });
 
