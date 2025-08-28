@@ -43,8 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 햄버거 메뉴 클릭 시 메뉴 토글 (반응형 모바일 시 사용)
-  document.querySelector('.menu-hamburger').addEventListener('click', () => {
+  document.querySelector('.menu-hamburger').addEventListener('click', e => {
     document.querySelector('.menu-box').classList.toggle('on');
+    e.currentTarget.classList.toggle('on');
   });
 
   // section 태그 acitive 클래스 토글링
