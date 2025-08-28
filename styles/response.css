@@ -1,1 +1,16 @@
-/* 반응형 css */
+/* 태블릿 */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .menu-list a {
+        font-size: 2vw;
+    }
+}
+
+/* 모바일 */
+@media (min-width: 481px) and (max-width: 767px) {
+
+}
+
+/* 소형 모바일 */
+@media (max-width: 480px) {
+
+}

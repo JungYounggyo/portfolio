@@ -35,16 +35,21 @@ document.addEventListener("DOMContentLoaded", () => {
       location.href = href;
       document.querySelector("body").classList.add("loaded");
 
-      let sections = document.querySelectorAll(".sections");
-        
-      sections.forEach((sec) => {
-        let index = Array.from(link.closest(".menu-list").children).indexOf(link.parentElement);
-        
-        sec.classList.remove("active");
-        sections[index].classList.add("active");
-      });
+      sectionToggling(link);
     }
   });
+
+  // section 태그 acitive 클래스 토글링
+  function sectionToggling(link) {
+    let sections = document.querySelectorAll(".sections");
+        
+    sections.forEach((sec) => {
+      let index = Array.from(link.closest(".menu-list").children).indexOf(link.parentElement);
+        
+      sec.classList.remove("active");
+      sections[index].classList.add("active");
+    });
+  }
 
   let observerOptions = {
     root: null,
@@ -132,6 +137,24 @@ document.addEventListener("DOMContentLoaded", () => {
           modeChangeButton.classList.toggle('dark');
       });
   }
+
+  // --- introduce Section ---
+  document.querySelectorAll('.question').forEach((question) => {
+    question.addEventListener('click', () => {
+      let allItems = document.querySelectorAll('.introduce-item');
+      let currentItem = question.parentElement;
+
+      allItems.forEach((item) => {
+        if (item !== currentItem) {
+          item.classList.remove('open');
+          item.querySelector('.answer').scrollTop = 0;
+        }
+      });
+
+      currentItem.classList.toggle('open');
+    });
+  });
+
 
   // --- Skill Section Toggle ---
   let checkbox = document.getElementById('toggleCheckbox');

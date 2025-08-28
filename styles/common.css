@@ -3,12 +3,16 @@
     --bg: #fffaf3;
     --text: #3e3e3e;
     --accent: #d97e6e;
+    --subaccent: #e59c8b;
     --border: #ead8c0;
+    --ansfont: #765342;
 }
 
 body.dark {
     --bg: #0f0f0f;
     --text: #e0e0e0;
     --accent: #11cb15;
+    --subaccent: #178b1a;
     --border: #1c1c1c;
+    --ansfont: #c7edc8;
 }

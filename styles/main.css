@@ -1,6 +1,5 @@
 @import url('./reset.css');
 @import url('./common.css');
-@import url('./response.css');
 
 html, body {
     height: 100%;
@@ -34,7 +33,8 @@ body.loaded .menu-box {
     color: var(--accent);
     text-decoration: none;
     font-weight: bold;
-    font-size: 2vw;
+    font-size: 1.5vw;
+    font-family: auto;
     position: relative;
 }
 
@@ -115,7 +115,7 @@ body.loaded .menu-box {
 .sections {
     height: 100vh;
     padding-inline: 3vw;
-    padding-block: 11vh 7vh;
+    padding-block: 12vh 6vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,6 +147,7 @@ body.loaded .menu-box {
     display: inline-block;
     overflow: hidden;
     vertical-align: middle;
+    font-family: auto;
 }
 
 .typed-text.has-cursor::after {
@@ -196,6 +197,62 @@ body.loaded .menu-box {
   }
 }
 
+/* introduce section */
+.introduce-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5vh;
+}
+
+.introduce-box img {
+    height: 100%;
+}
+
+.introduce-container {
+    margin: 0 auto;
+    /* font-family: Arial, sans-serif; */
+}
+
+.introduce-item {
+    margin-bottom: 10px;
+}
+
+.question {
+    max-height: 70px;
+    padding: 0.8vw;
+    background-color: var(--accent);
+    color: var(--border);
+    font-size: 1.5vw;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Noto Serif', serif;
+    transition: background-color 0.3s;
+}
+
+.question:hover {
+    background-color: var(--subaccent);
+}
+
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    color: var(--ansfont);
+    font-size: 2vw;
+    font-weight: 500;
+    background-color: var(--subaccent);
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.introduce-item.open .answer {
+    max-height: 40vh;
+    padding: 15px;
+    overflow: auto;
+}
+
 /* skill section */
 .skill-box {
     width: 100%;
@@ -203,8 +260,8 @@ body.loaded .menu-box {
     display: flex;
     /* flex-direction: column; */
     align-items: center;
-    justify-content: space-around;
-    gap: 3vh;
+    justify-content: center;
+    gap: 10vh;
 }
 
 .skill-header {
@@ -212,7 +269,7 @@ body.loaded .menu-box {
     /* flex-direction: column; */
     justify-content: center;
     align-items: center;
-    gap: 8vw;
+    gap: 3vw;
     font-size: 2rem;
 }
 
@@ -282,7 +339,8 @@ body.loaded .menu-box {
 }
 
 .skill-box .skill-category {
-    font-size: 2vw;
+    font-size: 2.5vw;
+    color: var(--subaccent);
     transition: 0.3s;
     font-weight: 700;
 }
@@ -304,7 +362,8 @@ body.loaded .menu-box {
 }
 
 .skill-item {
-    width: 10vw;
+    width: 12vw;
+    max-width: 150px;
     background-color: #fff;
     border: 2px solid var(--text);
     padding: 5px;
@@ -359,19 +418,21 @@ body.loaded .menu-box {
 .contact-method {
     width: 100%;
     text-align: center;
-    font-size: 3vw;
+    font-size: 4vw;
+    white-space: nowrap;
 }
 
 .footer {
     width: 100%;
-    height: 8vh;
-    padding-top: 0.5vh;
+    height: auto;
+    padding-block: 2vh 1.5vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.7vw;
+    font-size: 1.6vw;
     color: var(--text);
     background-color: var(--accent);
+    font-family: Arial, Helvetica, sans-serif;
     position: absolute;
     bottom: 0;
 }

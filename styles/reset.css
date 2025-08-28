@@ -1,7 +1,22 @@
+@font-face {
+    font-family: 'Nanum Pen';
+    src: url('./fonts/NanumPenScript-Regular.ttf') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Serif';
+    src: url('./fonts/NotoSerifKR-VariableFont_wght.ttf') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Nanum Pen', cursive;
 }
 
 html {
