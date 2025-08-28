@@ -99,6 +99,11 @@
     .contact-method {
         font-size: 4.8vw;
     }
+
+    .footer {
+        padding-block: 1vh 2vh;
+        font-size: 3.8vw;
+    }
 }
 
 /* 소형 모바일 */
@@ -106,7 +111,23 @@
     .skill-box {
         gap: 10vw;
     }
+    .skill-category {
+        font-size: 10vw;
+    }
+    .skill-list {
+        gap: 5px;
+    }
+    .skill-row {
+        gap: 5px;
+    }
     .skill-item {
         width: 20.5vw;
+    }
+
+    .contact-menu {
+        flex-direction: column;
+    }
+    .contact-method {
+        font-size: 6.7vw;
     }
 }
