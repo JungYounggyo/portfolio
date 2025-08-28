@@ -28,14 +28,24 @@ body.loaded .menu-box {
     justify-content: space-between;
     cursor: pointer;
     position: absolute;
-    top: 2vw;
-    left: 2.3vw;
+    top: -50px;
+    left: 4vw;
     z-index: 1100;
+}
+
+.loaded .menu-hamburger {
+    top: 4vw;
+    transition: 0.3s ease-in-out;
+}
+
+.menu-hamburger.on {
+    margin-top: -12px;
+    transition: 0.3s;
 }
 
 .menu-hamburger.on .bar:first-child {
     transform: rotate(43deg);
-    margin-top: 28px;
+    margin-top: 29px;
 }
 
 .menu-hamburger.on .bar:nth-child(2) {
@@ -44,7 +54,7 @@ body.loaded .menu-box {
 
 .menu-hamburger.on .bar:last-child {
     transform: rotate(-43deg);
-    margin-top: -28px;
+    margin-top: -29px;
 }
 
 .bar {
@@ -262,6 +272,7 @@ body.loaded .menu-box {
 .question {
     max-height: 70px;
     padding: 0.8vw;
+    padding-left: 1.6vw;
     background-color: var(--accent);
     color: var(--border);
     font-size: 1.5vw;
