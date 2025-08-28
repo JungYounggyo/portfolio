@@ -97,12 +97,12 @@
     }
 
     .contact-method {
-        font-size: 4.8vw;
+        font-size: 5vw;
     }
 
     .footer {
-        padding-block: 1vh 2vh;
-        font-size: 3.8vw;
+        padding-block: 1vh 1vh;
+        font-size: 2.7vw;
     }
 }
 
@@ -129,5 +129,10 @@
     }
     .contact-method {
         font-size: 6.7vw;
+    }
+
+    .footer {
+        padding-block: 1vh 1vh;
+        font-size: 3.5vw;
     }
 }

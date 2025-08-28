@@ -400,7 +400,7 @@ body.loaded .menu-box {
 .skill-box.main .skill-category:last-child,
 .skill-box .skill-item.can {
     opacity: 0.3;
-    transform: scale(0.94);
+    transform: scale(0.93);
 }
 
 .skill-box .skill-category:last-child,
