@@ -3,11 +3,68 @@
     .menu-list a {
         font-size: 2vw;
     }
+
+    .question {
+        font-size: 2.4vw;
+    }
+    .answer {
+        font-size: 2.8vw;
+    }
 }
 
 /* 모바일 */
 @media (min-width: 481px) and (max-width: 767px) {
+    .menu-box {
+        height: 100%;
+    }
+    .menu-box.on {
+        z-index: 3;
+    }
+    .menu-hamburger {
+        display: flex;
+    }
+    .menu-list {
+        width: 100%;
+        height: 100%;
+        display: none;
+        background-color: rgb(255 255 255 / 90%);
+        flex-direction: column;
+        justify-content: space-around;
+        padding-top: 8vw;
+    }
+    .menu-list a {
+        font-size: 2.7vw;
+    }
+    .main-box {
+        position: relative;
+        z-index: 2;
+    }
 
+    .question {
+        font-size: 2.7vw;
+    }
+    .answer {
+        font-size: 3.5vw;
+    }
+
+    .introduce-box::before {
+        content: "";
+        width: 100%;
+        height: 85%;
+        background-image: url('../images/daily_profile.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        position: absolute;
+        z-index: -1;
+    }
+    .introduce-box img {
+        display: none;
+    }
+
+    .skill-box .skill-category {
+        font-size: 3.8vw;
+    }
 }
 
 /* 소형 모바일 */

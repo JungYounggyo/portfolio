@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelector('nav').addEventListener('click', e => {
     let link = e.target.closest('a');
+    
+    // 메뉴 클릭 시 메뉴 닫기
+    link.closest('.menu-box').classList.remove('on');
     if (link && link.closest('.menu-item')) {
       e.preventDefault();
 
@@ -37,6 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       sectionToggling(link);
     }
+  });
+
+  // 햄버거 메뉴 클릭 시 메뉴 토글 (반응형 모바일 시 사용)
+  document.querySelector('.menu-hamburger').addEventListener('click', () => {
+    document.querySelector('.menu-box').classList.toggle('on');
   });
 
   // section 태그 acitive 클래스 토글링
