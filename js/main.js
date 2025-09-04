@@ -21,7 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelector('nav').addEventListener('click', e => {
     let link = e.target.closest('a');
-    
+    let hamburger = document.querySelector('.menu-hamburger');
+    if(hamburger.classList.contains('on')) hamburger.classList.remove('on');
+
     // 메뉴 클릭 시 메뉴 닫기
     link.closest('.menu-box').classList.remove('on');
     if (link && link.closest('.menu-item')) {
@@ -175,6 +177,38 @@ document.addEventListener("DOMContentLoaded", () => {
       checkbox.closest(".skill-box").classList.add("main");
     }
   });
+
+  // contact Section
+  let copyContact = [
+    "010-4019-9816",
+    "qwer2435@naver.com",
+    ""
+  ];
+  
+  let contactMenus = document.querySelectorAll('.contact-icon');
+    
+  contactMenus.forEach((menu, index) => {
+    menu.addEventListener('click', () => {
+      if(index === 2) return; // 깃허브는 복사 기능 제외
+      navigator.clipboard.writeText(copyContact[index])
+        .then(() => {
+          switch (index) {
+            case 0:
+              alert("전화번호가 복사되었습니다.");
+              break;
+            case 1:
+              alert("이메일 주소가 복사되었습니다.");
+              break;
+            default:
+              break;
+          }
+        })
+        .catch(err => {
+          console.error("복사 실패:", err);
+          alert("주소 복사에 실패했습니다.");
+      });
+    })
+  })
 
   // --- Global Event Listener Cleanup ---
   window.addEventListener('beforeunload', () => {
