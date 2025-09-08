@@ -1,3 +1,5 @@
+import { showPopup } from "./component/contactPopup.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   let navLinks = document.querySelectorAll(".menu-item a");
   let sections = document.querySelectorAll(".sections");
@@ -194,10 +196,10 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(() => {
           switch (index) {
             case 0:
-              alert("전화번호가 복사되었습니다.");
+              showPopup('전화번호가');
               break;
             case 1:
-              alert("이메일 주소가 복사되었습니다.");
+              showPopup('이메일이');
               break;
             default:
               break;

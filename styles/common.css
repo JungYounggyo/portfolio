@@ -5,7 +5,7 @@
     --text: #3b3393;
     --accent: #c6c4e9ba;
     --subaccent: #5b52bad4;
-    --border: #ead8c0;
+    --border: #130d51;
     --ansfont: #fbfbfde9;
     --imgfilter: invert(3%) sepia(83%) saturate(7031%) hue-rotate(251deg) brightness(106%) contrast(99%);
 }
@@ -16,7 +16,7 @@ body.dark {
     --text: #c7c7d7;
     --accent: #57e6a5;
     --subaccent: #57e6a6c6;
-    --border: #1c1c1c;
+    --border: #168955c6;
     --ansfont: #f7fff7;
     --imgfilter: invert(75%) sepia(56%) saturate(404%) hue-rotate(95deg) brightness(95%) contrast(93%);
 }
