@@ -5,7 +5,6 @@ html, body {
     height: 100%;
     background-color: var(--bg);
     scroll-behavior: smooth;
-    font-family: sans-serif;
 }
 
 body.loaded .menu-box {
@@ -88,7 +87,6 @@ body.loaded .menu-box {
     text-decoration: none;
     font-weight: bold;
     font-size: 1.5vw;
-    font-family: auto;
     position: relative;
 }
 
@@ -100,12 +98,14 @@ body.loaded .menu-box {
     background-color: var(--accent);
     position: absolute;
     bottom: 0;;
-    transition: 0.3s ease-in-out;
+    transition: 0.23s ease-in-out;
 }
 
-.menu-list a:hover:after {
-    opacity: 0.5;
-    height: 100%;
+@media (hover: hover) and (pointer: fine) {
+    .menu-list a:hover:after {
+        opacity: 0.4;
+        height: 100%;
+    }
 }
 
 .menu-list a.active::after {
@@ -127,27 +127,40 @@ body.loaded .menu-box {
     top: 10px;
     right: 10px;
     z-index: 4;
+    transition: 0.3s;
     cursor: pointer;
 }
 
+.mode-change.light {
+    right: 30px;
+    box-shadow: 16px 3px 18px 1px var(--subaccent);
+}
+
+.mode-change.dark {
+    box-shadow: -16px 3px 18px 1px var(--subaccent);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .mode-change div {
+        margin-top: 11px;
+    }
+    .mode-change div:first-child {
+        margin-top: 7px;
+    }
+}
+
 .mode-change div {
-    margin-top: 11px;
     font-size: 3em;
     position: absolute;
 }
 
 .mode-change div:first-child {
-    margin-top: 7px;
     opacity: 0;
 }
 
 .mode-change div:last-child {
     opacity: 1;
     transform: rotate(-40deg);
-}
-
-.mode-change.dark {
-    color: #000;
 }
 
 .mode-change.dark div:first-child {
@@ -190,7 +203,6 @@ body.loaded .menu-box {
 
 /* greeting section */
 .typing-container {
-    color: #61dafb;
     font-family: 'Press Start 2P', cursive;
     text-align: center;
     padding: 20px;
@@ -206,7 +218,6 @@ body.loaded .menu-box {
     font-weight: 800;
     overflow: hidden;
     vertical-align: middle;
-    font-family: auto;
 }
 
 .typed-text.has-cursor::after {
@@ -215,15 +226,15 @@ body.loaded .menu-box {
     vertical-align: middle;
     width: 0.1em;
     height: 1em;
-    background-color: var(--text);
+    background-color: var(--bg);
     margin-left: 0.1em;
     margin-bottom: 1vh;
     animation: blink-caret 0.75s step-end infinite;
 }
 
 @keyframes blink-caret {
-    from, to { background-color: var(--text); }
-    50% { background-color: #fff; }
+    from, to { background-color: var(--bg); }
+    50% { background-color: var(--text); }
 }
 
 .replay-button {
@@ -242,14 +253,16 @@ body.loaded .menu-box {
     filter: var(--imgfilter);
 }
 
-.replay-button:hover {
-    transform: scale(1.3);
+@media (hover: hover) and (pointer: fine) {
+    .replay-button:hover {
+        transform: scale(1.3);
+    }
+    .replay-button:hover img {
+        animation: spin 4s linear infinite;
+        opacity: 0.6;
+    }
 }
 
-.replay-button:hover img {
-    animation: spin 4s linear infinite;
-    opacity: 0.6;
-}
 
 @keyframes spin {
   from {
@@ -303,12 +316,13 @@ body.loaded .menu-box {
     transition: transform 0.3s;
 }
 
-.question:hover {
-    opacity: 0.7;
-}
-
-.question:hover::after {
-    transform: rotate(0deg);
+@media (hover: hover) and (pointer: fine) {
+    .question:hover {
+        opacity: 0.7;
+    }
+    .question:hover::after {
+        transform: rotate(0deg);
+    }
 }
 
 .introduce-item.open .question::after {
@@ -321,7 +335,6 @@ body.loaded .menu-box {
     color: var(--ansfont);
     font-size: 2vw;
     font-weight: 500;
-    font-family: auto;
     background-color: var(--subaccent);
     transition: max-height 0.4s ease, padding 0.4s ease;
 }
@@ -359,44 +372,44 @@ body.loaded .menu-box {
 }
 
 .toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
 }
 
 .toggle-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0; left: 0;
-  right: 0; bottom: 0;
-  background-color: var(--accent);
-  transition: 0.4s;
-  border-radius: 34px;
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    background-color: var(--accent);
+    transition: 0.4s;
+    border-radius: 34px;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 26px; width: 26px;
-  left: 4px; bottom: 4px;
-  background-color: #fff;
-  transition: 0.4s;
-  border-radius: 50%;
+    position: absolute;
+    content: "";
+    height: 26px; width: 26px;
+    left: 4px; bottom: 4px;
+    background-color: #fff;
+    transition: 0.4s;
+    border-radius: 50%;
 }
 
 .toggle-switch input:checked + .slider {
-  background-color: var(--subaccent);
+    background-color: var(--subaccent);
 }
 
 .toggle-switch input:checked + .slider:before {
-  transform: translateX(26px);
+    transform: translateX(26px);
 }
 
 .skill-content {
@@ -421,7 +434,6 @@ body.loaded .menu-box {
     font-size: 2.5vw;
     color: var(--subaccent);
     font-weight: 800;
-    font-family: auto;
     transition: 0.3s;
 }
 
@@ -457,6 +469,132 @@ body.loaded .menu-box {
     height: 100%;
     object-fit: contain;
 }
+
+/* project */
+.project-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 5px;
+    border: 0.5vw solid var(--subaccent);
+    overflow: hidden;
+}
+
+#project-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.project {
+    flex: 0 0 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    padding: 1.7vw;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+    scroll-snap-align: start;
+}
+
+.project.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-left {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow: hidden;
+    flex: 0.5;
+}
+
+.project-title {
+    font-size: clamp(20px, 2.5vw, 32px);
+    font-weight: 800;
+    text-align: center;
+    border-top: 1px solid var(--subaccent);
+    border-left: 1px solid var(--subaccent);
+    border-right: 6px solid var(--subaccent);
+    border-bottom: 5px solid var(--subaccent);
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.language-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.language-list p {
+    background-color: var(--accent);
+    color: var(--box-bg);
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: clamp(12px, 1.2vw, 16px);
+    font-weight: 600;
+}
+
+.project-right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 0 0 4px var(--subaccent);
+    flex: 1.5;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .project-right:hover {
+        transform: scale3d(1.01, 1.01, 1);
+        box-shadow: 0 0 18px 6px var(--subaccent);
+        transition: 0.3s;
+    }
+}
+
+.project-right img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    display: flex;
+    gap: 10px;
+    background-color: var(--accent);
+    padding: 4px 6px;
+    border-radius: 10px;
+    z-index: 10;
+    transform: translateX(-50%);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--ansfont);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: var(--border);
+}
+
 
 /* contact */
 
@@ -524,12 +662,13 @@ body.loaded .menu-box {
     bottom: 0;
     overflow: hidden;
     opacity: 0.45;
-    z-index: -1;
     transition: 0.3s ease-in-out;
 }
 
-.contact-icon:hover::after, .contact-icon:hover::before {
-    width: 100%;
+@media (hover: hover) and (pointer: fine) {
+    .contact-icon:hover::after, .contact-icon:hover::before {
+        width: 100%;
+    }
 }
 
 .contact-menu:nth-child(1) .contact-icon::before {

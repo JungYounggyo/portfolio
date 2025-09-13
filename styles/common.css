@@ -1,6 +1,6 @@
 /* 공통변수 css */
 :root {
-    --bg: #c7c4e90a;
+    --bg: #330d6903;
     --box-bg: #100c42;
     --text: #3b3393;
     --accent: #c6c4e9ba;
@@ -11,7 +11,7 @@
 }
 
 body.dark {
-    --bg: #0a101a;
+    --bg: #080d17;
     --box-bg: #151c27;
     --text: #c7c7d7;
     --accent: #57e6a5;

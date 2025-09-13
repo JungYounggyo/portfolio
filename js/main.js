@@ -1,5 +1,6 @@
 import { showPopup } from "./component/contactPopup.js";
-
+import { createProjectComponent } from "./component/projects.js";
+console.log(window.location)
 document.addEventListener("DOMContentLoaded", () => {
   let navLinks = document.querySelectorAll(".menu-item a");
   let sections = document.querySelectorAll(".sections");
@@ -179,6 +180,70 @@ document.addEventListener("DOMContentLoaded", () => {
       checkbox.closest(".skill-box").classList.add("main");
     }
   });
+
+  // prfoject Section
+  let projectsData = [
+    {
+        title: "My Portfolio",
+        imageUrl: "/images/projects/portfolio.png",
+        languages: ["HTML5", "CSS3", "JavaScript (ES6)", "Responsive Web", "Cross-Browser Compatibility","Github Pages"],
+        url: window.location.origin
+    },
+    {
+        title: "My Trading info",
+        imageUrl: "/images/projects/mti.png",
+        languages: ["HTML5", "CSS3", "JavaScript (ES6)", "Responsive Web", "Cross-Browser Compatibility", "Jenkins"],
+        url: "https://www.mytradinginfo.com/"
+    },
+    {
+        title: "Mario Game",
+        imageUrl: "/images/projects/mario.png",
+        languages: ["React", "CSS3", "Responsive Web","Github Pages"],
+        url:"https://jungyounggyo.github.io/mario-game/"
+    }
+  ];
+
+  // 렌더링
+  let projectListEl = document.getElementById("project-list");
+  let dotsContainer = document.getElementById("project-dots");
+
+  projectsData.forEach((project, index) => {
+      let component = createProjectComponent(project.imageUrl, project.title, project.languages, index, project.url);
+      projectListEl.appendChild(component);
+
+      let dot = document.createElement("span");
+      dot.className = "dot";
+      dot.dataset.index = index;
+
+      dot.addEventListener("click", () => {
+          let target = document.querySelector(`.project[data-index="${index}"]`);
+          target.scrollIntoView({ behavior: "smooth" });
+      });
+
+      dotsContainer.appendChild(dot);
+  });
+
+  // 감지 & 애니메이션 & dot sync
+  let observe = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          let index = entry.target.dataset.index;
+          let dot = document.querySelector(`.dot[data-index="${index}"]`);
+
+          if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+
+              document.querySelectorAll(".dot").forEach(d => d.classList.remove("active"));
+              dot.classList.add("active");
+          }
+      });
+  }, {
+      threshold: 0.5
+  });
+
+  document.querySelectorAll(".project").forEach(project => {
+      observe.observe(project);
+  });
+
 
   // contact Section
   let copyContact = [

@@ -44,6 +44,13 @@
         position: relative;
         z-index: 2;
     }
+    .mode-change.light {
+        box-shadow: 16px -2px 18px 1px var(--subaccent);
+    }
+
+    .mode-change.dark {
+        box-shadow: -16px -2px 18px 1px var(--subaccent);
+    }
 
     .typed-text {
         white-space: pre-wrap;
@@ -94,11 +101,35 @@
         width: 16vw;
     }
 
+    .project {
+        flex-direction: column;
+        text-align: center;
+    }
+    .project-left, .project-right {
+        flex: 1;
+    }
+    .project-left {
+        width: 100%;
+        gap: 8px;
+    }
+    .project-title {
+        width: 100%;
+    }
+    .language-list p {
+        padding: 2px 4px;
+    }
+    .project-right {
+        box-shadow: unset;
+        border: 2.5px solid var(--subaccent);
+    }
+    .project-right img {
+        max-width: 100%;
+    }
+
     .contact-list {
         flex-direction: column;
         gap: unset;
     }
-
     .contact-menu {
         width: 80%;
         height: 15%;
