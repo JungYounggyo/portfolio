@@ -1,5 +1,6 @@
 @import url('./reset.css');
 @import url('./common.css');
+@import url('./anime.css');
 
 html, body {
     height: 100%;
@@ -8,7 +9,7 @@ html, body {
 }
 
 body.loaded .menu-box {
-    top: 1vh;
+    top: 1.2vh;
 }
 
 .menu-box {
@@ -101,13 +102,6 @@ body.loaded .menu-box {
     transition: 0.23s ease-in-out;
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .menu-list a:hover:after {
-        opacity: 0.4;
-        height: 100%;
-    }
-}
-
 .menu-list a.active::after {
     height: 2px;
 }
@@ -119,7 +113,7 @@ body.loaded .menu-box {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--text);
+    background-color: var(--subaccent);
     border-radius: 100%;
     color: #fff;
     gap: 1vh;
@@ -133,20 +127,11 @@ body.loaded .menu-box {
 
 .mode-change.light {
     right: 30px;
-    box-shadow: 16px 3px 18px 1px var(--subaccent);
+    box-shadow: 16px 3px 18px 1px var(--text);
 }
 
 .mode-change.dark {
-    box-shadow: -16px 3px 18px 1px var(--subaccent);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .mode-change div {
-        margin-top: 11px;
-    }
-    .mode-change div:first-child {
-        margin-top: 7px;
-    }
+    box-shadow: -16px 3px 18px 1px var(--text);
 }
 
 .mode-change div {
@@ -186,7 +171,7 @@ body.loaded .menu-box {
 .sections {
     height: 100vh;
     padding-inline: 3vw;
-    padding-block: 11vh 6vh;
+    padding-block: 11.2vh 6.2vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -232,11 +217,6 @@ body.loaded .menu-box {
     animation: blink-caret 0.75s step-end infinite;
 }
 
-@keyframes blink-caret {
-    from, to { background-color: var(--bg); }
-    50% { background-color: var(--text); }
-}
-
 .replay-button {
     width: 5vw;
     min-width: 35px;
@@ -251,26 +231,6 @@ body.loaded .menu-box {
 
 .replay-button {
     filter: var(--imgfilter);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .replay-button:hover {
-        transform: scale(1.3);
-    }
-    .replay-button:hover img {
-        animation: spin 4s linear infinite;
-        opacity: 0.6;
-    }
-}
-
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 /* introduce section */
@@ -314,15 +274,6 @@ body.loaded .menu-box {
     float: right;
     margin-right: 1vw;
     transition: transform 0.3s;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .question:hover {
-        opacity: 0.7;
-    }
-    .question:hover::after {
-        transform: rotate(0deg);
-    }
 }
 
 .introduce-item.open .question::after {
@@ -496,7 +447,7 @@ body.loaded .menu-box {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1vw;
+    gap: 1.5vw;
     padding: 1.7vw;
     opacity: 0;
     transform: translateY(30px);
@@ -554,14 +505,6 @@ body.loaded .menu-box {
     border-radius: 10px;
     box-shadow: 0 0 0 4px var(--subaccent);
     flex: 1.5;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .project-right:hover {
-        transform: scale3d(1.01, 1.01, 1);
-        box-shadow: 0 0 18px 6px var(--subaccent);
-        transition: 0.3s;
-    }
 }
 
 .project-right img {
@@ -664,12 +607,6 @@ body.loaded .menu-box {
     overflow: hidden;
     opacity: 0.45;
     transition: 0.3s ease-in-out;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .contact-icon:hover::after, .contact-icon:hover::before {
-        width: 100%;
-    }
 }
 
 .contact-menu:nth-child(1) .contact-icon::before {
