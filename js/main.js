@@ -185,19 +185,19 @@ document.addEventListener("DOMContentLoaded", () => {
   let projectsData = [
     {
         title: "My Portfolio",
-        imageUrl: "/images/projects/portfolio.png",
+        imageUrl: "./images/projects/portfolio.png",
         languages: ["HTML5", "CSS3", "JavaScript (ES6)", "Responsive Web", "Cross-Browser Compatibility","Github Pages"],
         url: window.location.origin
     },
     {
         title: "My Trading info",
-        imageUrl: "/images/projects/mti.png",
+        imageUrl: "./images/projects/mti.png",
         languages: ["HTML5", "CSS3", "JavaScript (ES6)", "Responsive Web", "Cross-Browser Compatibility", "Jenkins"],
         url: "https://www.mytradinginfo.com/"
     },
     {
         title: "Mario Game",
-        imageUrl: "/images/projects/mario.png",
+        imageUrl: "./images/projects/mario.png",
         languages: ["React", "CSS3", "Responsive Web","Github Pages"],
         url:"https://jungyounggyo.github.io/mario-game/"
     }
