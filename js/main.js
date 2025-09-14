@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
         title: "My Portfolio",
         imageUrl: "./images/projects/portfolio.png",
         languages: ["HTML5", "CSS3", "JavaScript (ES6)", "Responsive Web", "Cross-Browser Compatibility","Github Pages"],
-        url: window.location.origin + window.location.pathname.split('/')[1] + '/'
+        url: window.location.origin + "/" + window.location.pathname.split('/')[1] + '/'
     },
     {
         title: "My Trading info",
