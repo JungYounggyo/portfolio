@@ -262,7 +262,7 @@ body.loaded .menu-box {
     padding-left: 1.6vw;
     background-color: var(--accent);
     color: var(--box-bg);
-    font-size: 1.5vw;
+    font-size: clamp(15px, 1.6vw, 19px);
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -284,7 +284,7 @@ body.loaded .menu-box {
     overflow: hidden;
     padding: 0 15px;
     color: var(--ansfont);
-    font-size: 2vw;
+    font-size: clamp(17px, 2vw, 21px);
     font-weight: 500;
     background-color: var(--subaccent);
     transition: max-height 0.4s ease, padding 0.4s ease;

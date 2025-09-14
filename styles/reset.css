@@ -178,3 +178,10 @@ hr {
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
+.mode-change div {
+  margin-top: 5px;
+}
+.mode-change div:first-child {
+  margin-top: 2px;
+}
