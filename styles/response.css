@@ -163,6 +163,23 @@
 }
 
 @media (orientation: landscape) {
+    .skill-box {
+        flex-direction: row;
+        gap: 7vw;
+        position: relative;
+    }
+
+    .skill-title {
+        position: relative;
+        align-items: center;
+    }
+    
+    .skill-title .skill-category {
+        font-size: 3vw;
+        position: absolute;
+        bottom: -10px;
+    }
+
     .skill-item {
         width: 10vw;
     }

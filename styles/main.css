@@ -140,10 +140,13 @@ body.loaded .menu-box {
 }
 
 .mode-change div:first-child {
+    padding-top: 7px;
     opacity: 0;
 }
 
 .mode-change div:last-child {
+    padding-top: 7px;
+    padding-right: 7px;
     opacity: 1;
     transform: rotate(-40deg);
 }
