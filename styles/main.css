@@ -140,13 +140,10 @@ body.loaded .menu-box {
 }
 
 .mode-change div:first-child {
-    padding-top: 7px;
     opacity: 0;
 }
 
 .mode-change div:last-child {
-    padding-top: 7px;
-    padding-right: 7px;
     opacity: 1;
     transform: rotate(-40deg);
 }
@@ -173,8 +170,6 @@ body.loaded .menu-box {
 
 .sections {
     height: 100vh;
-    padding-inline: 3vw;
-    padding-block: 11.2vh 6.2vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -187,6 +182,28 @@ body.loaded .menu-box {
 .sections * {
     color: var(--text);
     max-height: 100vh;
+}
+
+.section-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 3vw;
+    padding-block: 11.2vh 6.2vh;
+}
+
+.sections .section-container {
+    /* position: absolute;
+    left: 100vw; */
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.sections.active .section-container {
+    /* left: 0; */
+    opacity: 1;
 }
 
 /* greeting section */
@@ -371,17 +388,20 @@ body.loaded .menu-box {
     flex-wrap: wrap;
     justify-content: center;
     gap: 2vw;
+    max-height: calc(70vh);
+    overflow-y: auto;
+    padding-right: 10px;
 }
 
 .skill-list {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 10px;
 }
 
 .skill-row {
     display: flex;
-    gap: 15px;
+    gap: 10px;
 }
 
 .skill-box .skill-category {
@@ -545,7 +565,7 @@ body.loaded .menu-box {
 
 /* contact */
 
-.contact-section {
+.contact-section .section-container {
     display: flex;
     flex-direction: column;
 }

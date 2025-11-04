@@ -7,6 +7,14 @@
 
 /* 모바일 */
 @media (max-width: 767px) {
+
+    .mode-change div:last-child {
+        padding-top: 7px;
+        padding-right: 7px;
+    }
+    .mode-change div:first-child {
+        padding-top: 7px;
+    }
     .menu-box {
         height: 100%;
         top: 0 !important;
@@ -162,7 +170,10 @@
     }
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) and (max-width: 767px){
+    .introduce-container {
+        padding-inline: 20vw;
+    }
     .skill-box {
         flex-direction: row;
         gap: 7vw;
@@ -182,5 +193,13 @@
 
     .skill-item {
         width: 10vw;
+    }
+
+    .contact-list {
+        flex-direction: row;
+    }
+
+    .contact-icon {
+        height: 30vh;
     }
 }

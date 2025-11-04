@@ -1,6 +1,6 @@
 import { showPopup } from "./component/contactPopup.js";
 import { createProjectComponent } from "./component/projects.js";
-console.log(window.location)
+
 document.addEventListener("DOMContentLoaded", () => {
   let navLinks = document.querySelectorAll(".menu-item a");
   let sections = document.querySelectorAll(".sections");
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         let id = entry.target.getAttribute("id");
-
+        sectionToggling(document.getElementsByClassName(id)[0]);
         navLinks.forEach(link => link.classList.remove("active"));
 
         let activeLink = document.querySelector(`nav a[href="#${id}"]`);
