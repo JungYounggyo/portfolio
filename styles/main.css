@@ -223,7 +223,7 @@ body.loaded .menu-box {
     font-family: monospace;
     font-size: 14px;
     color: rgba(80,80,120,0.25);
-    padding: 40px;
+    padding-inline: 10vw 8vw;
     white-space: pre-wrap;
     pointer-events: none;
     display: flex;
@@ -267,8 +267,8 @@ body.loaded .menu-box {
   color: var(--code-property);
 }
 
-
 #codeTyping {
+    margin-top: 1vw;
     font-weight: 600;
     font-size: clamp(12px, 2vw, 17px);
     line-height: 2.2;
@@ -280,14 +280,32 @@ body.loaded .menu-box {
 }
 
 .typing-container {
-padding-inline: 8px;
-  position: relative;
-  z-index: 10;
+    padding-inline: 23px 22px;
+    margin-inline: 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.typing-background {
+    width: 0%;
+    height: 100%;
+    /* background: linear-gradient(90deg, var(--accent), var(--subaccent)); */
+    background-color: var(--bg);
+    border-radius: 40px;
+    box-shadow: 0px 0px 50px -15px var(--subaccent);
+    position: absolute;
+    left: 0;
+    transition: width 0.5s ease;
+    z-index: -1;
+}
+
+.typing-background.active {
+    width: 100%;
 }
 
 .typed-text {
     display: inline-block;
-    font-size: clamp(2rem, 5.5vw, 4.5rem);
+    font-size: clamp(1.5rem, 5.5vw, 4.5rem);
     font-weight: 800;
     overflow: hidden;
     vertical-align: middle;
