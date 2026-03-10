@@ -196,14 +196,11 @@ body.loaded .menu-box {
 }
 
 .sections .section-container {
-    /* position: absolute;
-    left: 100vw; */
     opacity: 0;
     transition: 0.3s;
 }
 
 .sections.active .section-container {
-    /* left: 0; */
     opacity: 1;
 }
 
