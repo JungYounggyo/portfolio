@@ -96,6 +96,64 @@ document.addEventListener("DOMContentLoaded", () => {
   let erasingSpeed = 50;
   let typingCharIndex = 0;
   let animationTimer;
+  let codeHTML = "";
+
+  let codeElement = document.querySelector('#codeTyping');
+
+let codeLines = [
+`<span class="kw">const</span> <span class="var">title</span> = <span class="str">"프론트엔드 개발자 정영교 포트폴리오"</span>;`,
+`<span class="kw">function</span> <span class="fn">typingTitle</span>(<span class="var">text</span>){`,
+`  <span class="kw">const</span> <span class="var">element</span> = <span class="obj">document</span>.<span class="fn">querySelector</span>(<span class="str">".typed-text"</span>);`,
+`  <span class="kw">let</span> <span class="var">index</span> = <span class="num">0</span>;`,
+`  <span class="kw">function</span> <span class="fn">typing</span>(){`,
+`    <span class="kw">if</span>(<span class="var">index</span> &lt; <span class="var">text</span>.<span class="prop">length</span>){`,
+`      <span class="var">element</span>.<span class="prop">textContent</span> += <span class="var">text</span>[<span class="var">index</span>];`,
+`      <span class="var">index</span>++;`,
+`      <span class="obj">setTimeout</span>(<span class="fn">typing</span>, <span class="num">100</span>);`,
+`    }`,
+`  }`,
+`  <span class="fn">typing</span>();`,
+`}`,
+`<span class="fn">typingTitle</span>(<span class="var">title</span>);`
+];
+
+// 1️⃣ 먼저 문자열 생성
+let codeText = codeLines.join("<br>");
+
+// 2️⃣ 그 다음 tokenize
+function tokenizeHTML(html) {
+  return html.match(/<[^>]+>|./g);
+}
+
+// 3️⃣ 마지막에 tokens 생성
+let tokens = tokenizeHTML(codeText);
+
+let codeIndex = 0;
+
+
+function typeCode() {
+
+  if (codeIndex < tokens.length) {
+
+    codeHTML += tokens[codeIndex];
+
+    codeElement.innerHTML = codeHTML;
+
+    codeIndex++;
+
+    setTimeout(typeCode, 15);
+
+  } else {
+
+    setTimeout(() => {
+      typeText();
+    }, 400);
+
+  }
+
+}
+
+
 
   // 글자를 타이핑하는 내부 함수
   function typeText() {
@@ -125,13 +183,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 초기 타이핑 시작
   setTimeout(() => {
-    typeText();
+    typeCode();
   }, 300);
 
   // 하드코딩으로 맞춘 텍스트 애니메이션 종료 시점
   setTimeout(() => {
     document.querySelector('body').classList.add('loaded');
-  }, 2200);
+  }, 100);
 
   let replayButton = document.querySelector('.replay-button');
 

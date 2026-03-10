@@ -4,7 +4,6 @@
 
 html, body {
     height: 100%;
-    background-color: var(--bg);
     scroll-behavior: smooth;
     transition: 0.3s;
 }
@@ -158,6 +157,7 @@ body.loaded .menu-box {
 }
 
 .main-box {
+    background-color: var(--bg);
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     height: 100vh;
@@ -208,14 +208,81 @@ body.loaded .menu-box {
 }
 
 /* greeting section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.code-bg {
+    position: absolute;
+    inset: 0;
+    font-family: monospace;
+    font-size: 14px;
+    color: rgba(80,80,120,0.25);
+    padding: 40px;
+    white-space: pre-wrap;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    font-family: "Fira Code", monospace;
+    filter: blur(0.2px);
+}
+
+/* keyword */
+.kw {
+  color: var(--code-keyword);
+}
+
+/* variable */
+.var {
+  color: var(--code-variable);
+}
+
+/* string */
+.str {
+  color: var(--code-string);
+}
+
+/* function */
+.fn {
+  color: var(--code-function);
+}
+
+/* number */
+.num {
+  color: var(--code-number);
+}
+
+/* object */
+.obj {
+  color: var(--code-object);
+}
+
+/* property */
+.prop {
+  color: var(--code-property);
+}
+
+
+#codeTyping {
+    font-weight: 600;
+    font-size: clamp(12px, 2vw, 17px);
+    line-height: 2.2;
+}
+
+#codeTyping span {
+    font-size: clamp(12px, 2vw, 18px);
+    line-height: 2.2;
+}
+
 .typing-container {
-    font-family: 'Press Start 2P', cursive;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 90vw;
+padding-inline: 8px;
+  position: relative;
+  z-index: 10;
 }
 
 .typed-text {

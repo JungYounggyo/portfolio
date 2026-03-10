@@ -8,6 +8,14 @@
     --border: #130d51;
     --ansfont: #fbfbfde9;
     --imgfilter: invert(3%) sepia(83%) saturate(7031%) hue-rotate(251deg) brightness(106%) contrast(99%);
+
+    --code-keyword: #a626a4;
+    --code-variable: #e45649;
+    --code-string: #50a14f;
+    --code-function: #4078f2;
+    --code-number: #986801;
+    --code-object: #0184bc;
+    --code-property: #383a42;
 }
 
 body.dark {
@@ -19,4 +27,12 @@ body.dark {
     --border: #168955c6;
     --ansfont: #f7fff7;
     --imgfilter: invert(75%) sepia(56%) saturate(404%) hue-rotate(95deg) brightness(95%) contrast(93%);
+
+    --code-keyword: #c678dd;
+    --code-variable: #e06c75;
+    --code-string: #98c379;
+    --code-function: #61afef;
+    --code-number: #d19a66;
+    --code-object: #56b6c2;
+    --code-property: #abb2bf;
 }
