@@ -169,25 +169,83 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // --- Skill Section ---
+  // 스킬 데이터 정의 (이미지 경로와 main 플래그)
+  let skillsData = [
+      { img: "./images/langImg/1.png", main: true, name: "JavaScript" },
+      { img: "./images/langImg/2.png", main: true, name: "CSS3" },
+      { img: "./images/langImg/3.png", main: true, name: "HTML" },
+      { img: "./images/langImg/5.png", main: true, name: "React.js" },
+      { img: "./images/langImg/14.png", main: true, name: "Next.js" },
+      { img: "./images/langImg/10.png", main: true, name: "MySql" },
+      { img: "./images/langImg/13.png", main: true, name: "Tailwind CSS" },
+      { img: "./images/langImg/4.png", main: true, name: "Bootstrap" },
+      { img: "./images/langImg/8.png", main: true, name: "GitHub" },
+      { img: "./images/langImg/15.png", main: true, name: "Git" },
+      { img: "./images/langImg/7.png", main: true, name: "TypeScript" },
+      { img: "./images/langImg/9.png", main: false, name: "jQuery" },
+      { img: "./images/langImg/12.png", main: false, name: "Jenkins" },
+      { img: "./images/langImg/6.png", main: false, name: "Svelte" },
+      { img: "./images/langImg/11.png", main: false, name: "PHP" },
+  ];
 
-  // --- Skill Section Toggle ---
+  // 스킬 렌더링 함수 (모드에 따라 필터링)
+  function renderSkills(isMainMode = true) {
+      let skillListEl = document.querySelector('.skill-list');
+      skillListEl.innerHTML = '';
+
+      let filteredSkills = isMainMode ? skillsData.filter(skill => skill.main) : skillsData.filter(skill => !skill.main);
+
+      // 행별 그룹화 (4개씩)
+      for (let i = 0; i < filteredSkills.length; i += 4) {
+          let row = document.createElement('div');
+          row.className = 'skill-row';
+          filteredSkills.slice(i, i + 4).forEach(skill => {
+              let item = document.createElement('div');
+              item.className = 'skill-item' + (skill.main ? ' can' : '');
+              item.innerHTML = `<img src="${skill.img}" alt="${skill.name}">`;
+              row.appendChild(item);
+          });
+          skillListEl.appendChild(row);
+      }
+  }
+
+  // 초기 렌더링 (Main 모드)
+  renderSkills(true);
+
+  // 토글 시 높이 및 scaleY 애니메이션 적용
   let checkbox = document.getElementById('toggleCheckbox');
+  let skillContent = document.querySelector('.skill-content');
 
   checkbox.addEventListener('change', () => {
-    if (checkbox.checked) {
-      checkbox.closest(".skill-box").classList.remove("main");
-    } else {
-      checkbox.closest(".skill-box").classList.add("main");
-    }
-  });
+      let isMainMode = !checkbox.checked; // 체크 해제: Main 모드, 체크: Experienced 모드
+      checkbox.closest(".skill-box").classList.toggle("main", isMainMode);
 
+      // 애니메이션 시작: 높이 0, scaleY 0 (가운데 기준 축소)
+      skillContent.style.height = '0px';
+      skillContent.style.transform = 'scaleY(0)';
+
+      // DOM 재생성 (새 모드에 맞춰)
+      setTimeout(() => {
+          renderSkills(isMainMode);
+          // 새로운 높이와 scaleY 1로 전환 (가운데 기준 확장)
+          skillContent.style.height = skillContent.scrollHeight + 'px';
+          skillContent.style.transform = 'scaleY(1)';
+      }, 10);
+
+      // 애니메이션 끝나면 height: auto로 리셋 (transform은 유지)
+      setTimeout(() => {
+          skillContent.style.height = 'auto';
+      }, 310); // transition 시간 + 여유
+  });
+  
   // prfoject Section
   let projectsData = [
     {
-        title: "My Portfolio",
-        imageUrl: "./images/projects/portfolio.png",
-        languages: ["HTML5", "CSS3", "JavaScript (ES6)", "Responsive Web", "Cross-Browser Compatibility","Github Pages"],
-        url: window.location.origin + "/" + window.location.pathname.split('/')[1] + '/'
+        title: "Responsibility Project",
+        imageUrl: "./images/projects/responsibility.png",
+        languages: ["React", "Next.js", "scss", "zod", "react-hook-form","Jenkins"],
+        url:"https://www.argo.it.kr/sign-in"
     },
     {
         title: "My Trading info",
@@ -200,6 +258,12 @@ document.addEventListener("DOMContentLoaded", () => {
         imageUrl: "./images/projects/mario.png",
         languages: ["React", "CSS3", "Responsive Web","Github Pages"],
         url:"https://jungyounggyo.github.io/mario-game/"
+    },
+    {
+        title: "My Portfolio",
+        imageUrl: "./images/projects/portfolio.png",
+        languages: ["HTML5", "CSS3", "JavaScript (ES6)", "Responsive Web", "Cross-Browser Compatibility","Github Pages"],
+        url: window.location.origin + "/" + window.location.pathname.split('/')[1] + '/'
     }
   ];
 

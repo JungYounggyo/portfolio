@@ -6,6 +6,7 @@ html, body {
     height: 100%;
     background-color: var(--bg);
     scroll-behavior: smooth;
+    transition: 0.3s;
 }
 
 body.loaded .menu-box {
@@ -223,6 +224,7 @@ body.loaded .menu-box {
     font-weight: 800;
     overflow: hidden;
     vertical-align: middle;
+    white-space: pre-wrap;
 }
 
 .typed-text.has-cursor::after {
@@ -391,6 +393,13 @@ body.loaded .menu-box {
     max-height: calc(70vh);
     overflow-y: auto;
     padding-right: 10px;
+    height: auto;
+    transform-origin: center;
+    transition: height 0.3s ease, transform 0.3s ease;
+}
+
+.skill-content::-webkit-scrollbar {
+    display: none;
 }
 
 .skill-list {
@@ -411,22 +420,6 @@ body.loaded .menu-box {
     transition: 0.3s;
 }
 
-.skill-box .skill-category:first-child,
-.skill-box.main .skill-item,
-.skill-box.main .skill-category:last-child,
-.skill-box .skill-item.can {
-    opacity: 0.3;
-    transform: scale(0.93);
-}
-
-.skill-box .skill-category:last-child,
-.skill-box.main .skill-category:first-child,
-.skill-box.main .skill-item.can,
-.skill-box .skill-item {
-    opacity: 1;
-    transform: scale(1);
-}
-
 .skill-item {
     width: 12vw;
     max-width: 150px;
@@ -442,7 +435,9 @@ body.loaded .menu-box {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: 0.3s;
 }
+
 
 /* project */
 .project-container {
@@ -662,4 +657,10 @@ body.loaded .menu-box {
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
     bottom: 0;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
