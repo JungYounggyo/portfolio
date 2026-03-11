@@ -268,13 +268,13 @@ body.loaded .menu-box {
 #codeTyping {
     margin-top: 1vw;
     font-weight: 600;
-    font-size: clamp(16px, 1.8vw, 18px);
+    font-size: clamp(16px, 2vw, 20px);
     line-height: 1.8;
     letter-spacing: 1.5px;
 }
 
 #codeTyping span {
-    font-size: clamp(16px, 1.8vw, 18px);
+    font-size: clamp(16px, 2vw, 20px);
     line-height: 1.8;
     letter-spacing: 1.5px;
 }
@@ -301,6 +301,8 @@ body.loaded .menu-box {
 
 .code-bg.active {
     opacity: 0.2;
+    transform: scale(1.7);
+    margin-left: 9vw;
 }
 
 .code-bg.active+.typing-container .typing-background {
