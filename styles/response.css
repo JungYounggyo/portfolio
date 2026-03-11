@@ -53,10 +53,6 @@
         box-shadow: -16px -2px 18px 1px var(--subaccent);
     }
 
-    .typed-text {
-        white-space: pre-wrap;
-    }
-
     .question {
         font-size: clamp(16px, 3.5vw, 18px);
     }

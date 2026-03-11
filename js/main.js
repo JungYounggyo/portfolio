@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
       animationTimer = setTimeout(typeText, typingSpeed);
       if(typingCharIndex === textToType.length) {
         setTimeout(() => {
-          document.querySelector('.typing-background').classList.add('active');
+          document.querySelector('.code-bg').classList.add('active');
         }, 100);
       }
     } else {
