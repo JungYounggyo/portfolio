@@ -302,7 +302,8 @@ body.loaded .menu-box {
 .code-bg.active {
     opacity: 0.2;
     transform: scale(1.7);
-    margin-left: 9vw;
+    margin-left: 3vw;
+    transform: matrix3d(2, 0, 0, -0.001, -1, 3, 0, 0, 0, 0, 1, 0, 0,250, 0, 1);
 }
 
 .code-bg.active+.typing-container .typing-background {
@@ -483,7 +484,7 @@ body.loaded .menu-box {
     gap: 2vw;
     max-height: calc(70vh);
     overflow-y: auto;
-    padding-right: 10px;
+    padding-inline: 16px;
     height: auto;
     transform-origin: center;
     transition: height 0.3s ease, transform 0.3s ease;
@@ -514,12 +515,16 @@ body.loaded .menu-box {
 .skill-item {
     width: 12vw;
     max-width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #fff;
     border: 2px solid var(--text);
     padding: 5px;
     border-radius: 5px;
     box-sizing: border-box;
     transition: 0.3s;
+    position: relative;
 }
 
 .skill-item img {
@@ -529,6 +534,23 @@ body.loaded .menu-box {
     transition: 0.3s;
 }
 
+.skill-name {
+    padding: 4px 6px;
+    font-size: 24px;
+    font-weight: 800;
+    background-color: var(--subaccent);
+    color: var(--bg);
+    text-align: center;
+    border-radius: 10px;
+    white-space: nowrap;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+}
+
+.skill-item:hover .skill-name {
+    opacity: 0.8;
+}
 
 /* project */
 .project-container {

@@ -248,7 +248,10 @@ document.addEventListener("DOMContentLoaded", () => {
           filteredSkills.slice(i, i + 4).forEach(skill => {
               let item = document.createElement('div');
               item.className = 'skill-item' + (skill.main ? ' can' : '');
-              item.innerHTML = `<img src="${skill.img}" alt="${skill.name}">`;
+              item.innerHTML = `
+                <img src="${skill.img}" alt="${skill.name}">
+                <div class="skill-name">${skill.name}</div>
+              `;
               row.appendChild(item);
           });
           skillListEl.appendChild(row);
