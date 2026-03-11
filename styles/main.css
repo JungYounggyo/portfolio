@@ -227,7 +227,7 @@ body.loaded .menu-box {
     align-items: center;
     font-family: "Fira Code", monospace;
     filter: blur(0.2px);
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 /* keyword */
