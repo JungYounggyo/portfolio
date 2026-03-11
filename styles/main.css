@@ -510,6 +510,17 @@ body.loaded .menu-box {
     color: var(--subaccent);
     font-weight: 800;
     transition: 0.3s;
+    opacity: 0.4;
+    transform: scale(0.8);
+}
+
+.skill-box.main .skill-category:first-child {
+    opacity: 1;
+    transform: scale(1.2);
+}
+.skill-box:not(.main) .skill-category:last-child {
+    opacity: 1;
+    transform: scale(1.2);
 }
 
 .skill-item {
@@ -764,7 +775,7 @@ body.loaded .menu-box {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.6vw;
+    font-size: clamp(14px, 1.5vw, 18px);
     color: var(--accent);
     background-color: var(--box-bg);
     font-family: Arial, Helvetica, sans-serif;
