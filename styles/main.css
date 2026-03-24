@@ -303,7 +303,7 @@ body.loaded .menu-box {
     opacity: 0.2;
     transform: scale(1.7);
     margin-left: 3vw;
-    transform: matrix3d(2, 0, 0, -0.001, -1, 3, 0, 0, 0, 0, 1, 0, 0,250, 0, 1);
+    transform: matrix3d(2, 0, 0, -0.001, -1, 3, 0, 0, 0, 0, 1, 0, 0,250, 0, 0.95);
 }
 
 .code-bg.active+.typing-container .typing-background {

@@ -28,7 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if(hamburger.classList.contains('on')) hamburger.classList.remove('on');
 
     // 메뉴 클릭 시 메뉴 닫기
-    link.closest('.menu-box').classList.remove('on');
+    if (link) {
+      link.closest('.menu-box').classList.remove('on');
+    }
     if (link && link.closest('.menu-item')) {
       e.preventDefault();
 
